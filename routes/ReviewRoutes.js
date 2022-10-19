@@ -1,58 +1,59 @@
+const { Router } = require('express')
 const express = require('express')
 
 //definir objeto de ruteo 
 const router = express.Router()
 
-//listar todos los bootcamsp
+//listar todos los reviews
 router.get('/' , (req , res) =>{
     res
     .status(200)
     .json({
         "success": true,
-        "data" : "aqui va a salir todos los bootcamps"
+        "data" : "aqui va a salir todos los reviews"
     })
 })
 
-//Listar bootcamp pi Id
+//Listar review pi Id
 router.get('/:id' , (req , res) =>{
     console.log(req.params.id)
     res
     .status(200)
     .json({
         "success": true,
-        "data" : `aqui va a salir el bootcamp cuyo id es: ${req.params.id}`
+        "data" : `aqui va a salir el review cuyo id es: ${req.params.id}`
     })
 })
 
-//Actualizar bootcamps
+//Actualizar reviews
 router.put('/:id' , (req , res) =>{
     console.log(req.params.id)
     res
     .status(200)
     .json({
         "success": true,
-        "data" : `aqui va actualizarse el bootcamp cuyo id es: ${req.params.id}`
+        "data" : `aqui va actualizarse el review cuyo id es: ${req.params.id}`
     })
 })
 
-//Eliminar bootcamps
+//Eliminar reviews
 router.delete('/:id' , (req , res) =>{
     console.log(req.params.id)
     res
     .status(200)
     .json({
         "success": true,
-        "data" : `aqui va a eliminar el bootcamps cuyo id es: ${req.params.id}`
+        "data" : `aqui va a eliminar el review cuyo id es: ${req.params.id}`
     })
 })
 
-//Crear nuevo bootcamps
+//Crear nuevo reviews
 router.post('/' , (req , res) =>{
     res
     .status(200)
     .json({
         "success": true,
-        "data" : "aqui vamos a registrar un bootcamp"
+        "data" : "aqui vamos a registrar un review"
     })
 })
 

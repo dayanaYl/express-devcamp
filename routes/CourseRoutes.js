@@ -10,7 +10,7 @@ router.get('/' , (req , res) =>{
     .status(200)
     .json({
         "success": true,
-        "data" : "aqui va a salir todos los course"
+        "data" : "aqui va a salir todos los courses"
     })
 })
 
@@ -21,7 +21,7 @@ router.get('/:id' , (req , res) =>{
     .status(200)
     .json({
         "success": true,
-        "data" : `aqui va a salir el course cuyo id es ${req.params.id}`
+        "data" : `aqui va a salir el course cuyo id es: ${req.params.id}`
     })
 })
 
@@ -32,7 +32,7 @@ router.put('/:id' , (req , res) =>{
     .status(200)
     .json({
         "success": true,
-        "data" : `aqui va actualizarse el courses cuyo id es ${req.params.id}`
+        "data" : `aqui va actualizarse el course cuyo id es: ${req.params.id}`
     })
 })
 
@@ -43,7 +43,7 @@ router.delete('/:id' , (req , res) =>{
     .status(200)
     .json({
         "success": true,
-        "data" : `aqui va a eliminar el courses cuyo id es ${req.params.id}`
+        "data" : `aqui va a eliminar el course cuyo id es: ${req.params.id}`
     })
 })
 
@@ -53,7 +53,7 @@ router.post('/' , (req , res) =>{
     .status(200)
     .json({
         "success": true,
-        "data" : "aqui vamos a registrar course"
+        "data" : "aqui vamos a registrar un course"
     })
 })
 
