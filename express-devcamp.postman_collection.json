@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "49236b41-08ba-4d35-ae08-b61befdc740f",
+		"_postman_id": "72bf30a7-ae50-4d11-8c09-ff6b3b64a51f",
 		"name": "express-devcamp",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23072407"
 	},
 	"item": [
 		{
@@ -119,21 +120,48 @@
 			]
 		},
 		{
-			"name": "course",
+			"name": "courses",
 			"item": [
 				{
-					"name": "Traer todos los course",
+					"name": "Traer todos los courses",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course"
+							]
+						}
 					},
 					"response": []
 				},
 				{
-					"name": "traer course por id",
+					"name": "Traer course por id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"20"
+							]
+						}
 					},
 					"response": []
 				},
@@ -141,7 +169,21 @@
 					"name": "Actualizar course por id",
 					"request": {
 						"method": "PUT",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course/35",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"35"
+							]
+						}
 					},
 					"response": []
 				},
@@ -149,7 +191,21 @@
 					"name": "Eliminar couse por id",
 					"request": {
 						"method": "DELETE",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course/86",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course",
+								"86"
+							]
+						}
 					},
 					"response": []
 				},
@@ -157,7 +213,133 @@
 					"name": "Crear course",
 					"request": {
 						"method": "POST",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"course"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review",
+			"item": [
+				{
+					"name": "Traer todos los reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer review por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review/18",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"18"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar review por id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review/50",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"50"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar review por id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/v1/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"v1",
+								"review"
+							]
+						}
 					},
 					"response": []
 				}
