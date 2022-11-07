@@ -111,22 +111,7 @@ exports.deleteUser = async (req , res) =>{
  
     try {
         const singleUser = await User.findByPk(req.params.id);
-         if(!singleUser){
-            res
-            .status(400)
-            .json({
-                "success": false,
-                "errors":"usuario ya no existente"
-            })
-         }else{
-            // en caso que actualizo el usuario
-            //console.log(req.params.id)
-            await User.delete (req.body,{
-            where:{
-                id: req.params.id
-            }});
             //selecciono user actualizado
-            const deleteUser = await User.findByPk(req.params.id);
         res
         .status(200)
         .json({
@@ -134,7 +119,7 @@ exports.deleteUser = async (req , res) =>{
             "data" : deleteUser
         })
     }
-     } catch (error) {
+     catch (error) {
             res
             .status(400)
             .json({

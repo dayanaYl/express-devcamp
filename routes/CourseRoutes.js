@@ -1,11 +1,29 @@
-const { Router } = require('express')
+//const { Router } = require('express')
 const express = require('express')
 
 //definir objeto de ruteo 
 const router = express.Router()
+const{
+    getAllCourses,
+    getSingleCourse,
+    updateCourse,
+    deleteCourse,
+    createCourse
+
+} = require('../controllers/CoursesController')
+
+ //crear rutas sin parametro 
+ router.route('/')
+                .get(getAllCourses)
+                .post(createCourse)
+//crear rutas con parametro 
+router.route('/:id')
+        .get(getSingleCourse)
+        .put(updateCourse)
+        .delete(deleteCourse)
 
 //listar todos los courses
-router.get('/' , (req , res) =>{
+/*router.get('/' , (req , res) =>{
     res
     .status(200)
     .json({
@@ -55,7 +73,7 @@ router.post('/' , (req , res) =>{
         "success": true,
         "data" : "aqui vamos a registrar un course"
     })
-})
+})*/
 
 
 module.exports = router
