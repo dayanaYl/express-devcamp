@@ -3,9 +3,9 @@ const sequelize = require ('../config/Seq')
 //data
 const {DataTypes, ValidationError} = require ('sequelize')
 //el modelo 
-const UserModel = require ('../models/courses')
+const CourseModel = require ('../models/Courses')
 //crear la entidad 
-const Course = UserModel(sequelize,DataTypes)
+const Course = CourseModel(sequelize,DataTypes)
 
 
 
@@ -68,7 +68,6 @@ exports.getSingleCourse = async (req , res) =>{
 
 //Actualizar user
 exports.updateCourse = async (req , res) =>{
-    
    try {
    const singleCourse = await Course.findByPk(req.params.id);
     if(!singleCourse){
@@ -76,7 +75,7 @@ exports.updateCourse = async (req , res) =>{
        .status(400)
        .json({
            "success": false,
-           "errors":"usuario no existente"
+           "errors":"course no existente"
        })
     }else{
        // en caso que actualizo el usuario
@@ -106,31 +105,34 @@ exports.updateCourse = async (req , res) =>{
    
 }
 
-//Eliminar user
-exports.deleteCourse = async (req , res) =>{
-
-   try {
-       const singleCourses = await Courses.findByPk(req.params.id);
-           //selecciono user actualizado
-       res
-       .status(200)
-       .json({
-           "success": true,
-           "data" : deleteCourse
-       })
-   }
-    catch (error) {
-           res
-           .status(400)
-           .json({
-               "sucess":false,
-               "errors":"error de servidor desconocido"
-   
-           }) 
-       
-   
-}
-
+//Eliminar Courses 
+//Borrar Courses
+exports.deleteCourse = async (req, res)=>{
+    //console.log(req.params.id)
+    try {
+        const SingleCourse = await Course.findByPk(req.params.id);
+        if (!SingleCourse) {
+            res
+            .status(400)
+            .json({
+                "success": false,
+                "errors": "Course no existente"
+        })
+        } else {
+            await Course.destroy({
+                where: {
+                    id: req.params.id
+                }
+              });
+            }
+} catch (error) {
+        res
+        .status(400)
+        .json({
+            "success": false,
+            "errors": " Error de servidor desconocido"
+        })
+    }
 }
 
 //Crear nuevo Courses
