@@ -1,11 +1,29 @@
-const { Router } = require('express')
 const express = require('express')
 
 //definir objeto de ruteo 
 const router = express.Router()
+const {
+    getAllReviews,
+    getSingleReview,
+    updateReview,
+    deleteReview,
+    createReview
+ } = require('../controllers/ReviewsController')
+
+ //crear rutas sin parametro 
+ router.route('/')
+                .get(getAllReviews)
+                .post(createReview)
+//crear rutas con parametro 
+router.route('/:id')
+        .get(getSingleReview)
+        .put(updateReview)
+        .delete(deleteReview)
+
+module.exports = router
 
 //listar todos los reviews
-router.get('/' , (req , res) =>{
+/*router.get('/' , (req , res) =>{
     res
     .status(200)
     .json({
@@ -58,4 +76,4 @@ router.post('/' , (req , res) =>{
 })
 
 
-module.exports = router
+module.exports = router*/

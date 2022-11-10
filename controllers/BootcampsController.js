@@ -13,13 +13,13 @@ const Bootcamp = BootcampModel(sequelize,DataTypes)
 exports.getAllBootcamps =  async (req , res) =>{
    try {
         //traer los Bootcamp 
-   const bootcamps = await  Bootcamp.findAll();
+   const bootcamp = await  Bootcamp.findAll();
    //responde con los datos 
    res
    .status(200)
    .json({
        "success": true,
-       "data" : bootcamps
+       "data" : bootcamp
    })
    } catch (error) {
        res
